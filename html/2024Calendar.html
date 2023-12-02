@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar 2024</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Engravers+MT&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Bigelow+Rules&family=Jolly+Lodger&family=Libre+Baskerville:wght@700&family=Merriweather:wght@700&family=Metal+Mania&family=Moul&family=Titan+One&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Bigelow+Rules&family=Jolly+Lodger&family=Libre+Baskerville:wght@700&family=Merriweather:wght@700&family=Metal+Mania&family=Moul&family=Titan+One&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Bigelow+Rules&family=Bowlby+One+SC&family=Jolly+Lodger&family=Libre+Baskerville:wght@700&family=Merriweather:wght@700&family=Metal+Mania&family=Moul&family=Titan+One&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Bigelow+Rules&family=Bowlby+One+SC&family=Jolly+Lodger&family=Libre+Baskerville:wght@700&family=Merriweather:wght@700&family=Metal+Mania&family=Moul&family=Pirata+One&family=Titan+One&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        /* body {
+            background-image: url('images/bg2.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            background-size: 100% 100%;
+        } */
+
+        img {
+            /* display: block; */
+            margin: 0;
+            /* padding-top: 10%; */
+            width: 50%;
+            /* z-index: 1; */
+            /* position: absolute; */
+            /* vertical-align: top; */
+            top: 0;
+            bottom: 0;
+            max-width: 800px;
+        }
+        .name {
+            font-family: 'Playfair Display', serif;
+            font-weight: 900;
+            font-size: 80px;
+            text-transform: uppercase;
+            display: inline-block;
+            /* line-height: 72px; */
+            /* margin-bottom: 20px; */
+            margin: 0;
+        }
+        .published {
+            text-transform: uppercase;
+            /* border-bottom: 2px solid #2f2f2f;
+            border-top: 2px solid #2f2f2f; */
+            padding: 12px 0 12px 0;
+            text-align: center;
+
+        }
+        .headline {
+            font-family: 'Moul';
+            font-weight: 300px;
+            font-size: 80px;
+            margin-top: 5px;
+            text-align: center;
+            letter-spacing: 5px;
+            line-height: 70px;
+        }
+        table {
+            border: 2px solid black;
+            margin: auto;
+            /* width: 120%; */
+            margin-bottom: 10px;
+        }
+
+        .content-group {
+            display: flex;  
+            flex-direction: column;
+            align-items: center;
+            margin-top: 10px;
+            /* justify-content: center; */
+            /* min-height: 100vh; */
+            /* text-align: center;
+            background: black;
+            font-size: 25px;
+            letter-spacing: 10px;
+            font-weight: 100px;
+            color: white;
+            padding: 10px;
+            border: 1px solid white;
+            font-weight: bolder;
+            margin: 0%; */
+        }
+
+        .main-content {
+            /* width: 100%; */
+            /* margin-top: 20px; */
+            border-spacing: 0;
+            border-collapse: collapse;
+            display: inline-block;
+            height: fit-content;
+            vertical-align: top;
+            border: 5px solid black;
+            margin-bottom: 20px;
+        }
+
+        .holidays {
+            /* background-color: black; */
+            color: black;
+            vertical-align: top;
+            /* float: right; */
+            /* width: 50%; */
+            padding: 5px;
+            margin: 10px;
+            font-family: 'Libre Baskerville', serif;
+            /* border: 1px solid #ddd; */
+        }
+
+        /* .months {
+            border: 2px solid red;
+            border-radius: 5px;
+        } */
+
+        h1 {
+            /* font-family: 'Titan One'; */
+            font-family: 'Bowlby One SC', serif;
+            /* font-family: 'Uncial Antiqua', sans-serif; */
+            margin: 0;
+            /* font-size: 1px; */
+        }
+        .sub-headline {
+            font-size: 70px;
+            /* color: black; */
+            background-color: #101010;
+            color: #444444;
+            /* color: #ffffff */
+        }
+        hr {
+            background-color:black; 
+            border-width:0; 
+            color:black;
+            margin:0;
+            height:5px;
+            line-height:0;
+            text-align:left;
+            width:90%;
+            margin-bottom: 10px;
+        }
+
+        p {
+            text-indent: 4%;
+            font-size: 12px;
+            text-align: justify;
+        }
+        .content p:first-of-type::first-letter{
+            font-size: 5em;
+            float: left;
+            line-height: 50%;
+            margin: 0.1em 0.1em 0.1em -0.05em;
+        }
+        .essay {
+            font-size: 16px;
+        }
+
+        td {
+            padding: 5px;
+            position: relative;
+            vertical-align: top;
+        }
+
+        .back-video {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+            position: fixed;
+            min-width: 100%;
+            min-height: 100%;
+        }
+
+        /********** Large devices only **********/
+        @media (min-width: 992px) {
+            h1.name {
+                font-size: 3rem;
+            }
+            td {
+                padding: 7.5px;
+            }
+        }
+
+        /********** Medium devices only **********/
+        @media (min-width: 768px) and (max-width: 991px) {
+            h1.name {
+                font-size: 2.5rem;
+            }
+            td {
+                padding: 6px;
+            }
+            body {
+                display: flex;  
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        /********** Extra small devices only **********/
+        @media (max-width: 767px) {
+            h1.name {
+                font-size: 2rem;
+            }
+            td {
+                padding: 5px;
+            }
+            body {
+                width: 100%;
+                display: flex;  
+                flex-direction: column;
+                align-items: center;
+            }
+            .holidays {
+                width: 100%;
+            }
+            h1 {
+                text-align: center;
+            }
+        }
+    </style>
+    <script>
+        
+    </script>
+</head>
+<body>
+    <header>
+        <div class="content-group">
+            <hr>
+            <h1 class="name">MA. CRISTINA S. VELASCO</h1>
+            <hr>
+            <!-- <img src="images/myname.png"> -->
+            <video autoplay loop muted plays-inline class="back-video">
+                <source src="images/Newspaper.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="published">Sta. Mesa, MNL - Thursday December 7, 2023 - One Page</div>
+    </header>
+    <table>
+        <tr>
+            <td colspan="3">
+                <h1 class="headline">MONTHS OF THE YEAR</h1>
+            </td>
+        </tr>
+        <tr>
+            <td class="months">
+                <img src="images/January.gif" alt="February" usemap="#February" style="width:350px;height:200px;">
+                <a href="January.html"
+                    style="position: absolute; top: 44px; left: 34px; width: 236px; height: 306px; display: block;"></a>
+            </td>
+            <td class="months">
+                <img src="images/February.gif" alt="February" usemap="#February" style="width:350px;height:200px;">
+                <map name="February">
+                    <area shape="rect" coords="34,44,270,350" alt="January" href="February.html">
+                </map>
+            </td>
+            <td rowspan="2" class="holidays">
+                <h1 class="sub-headline">
+                    <center><strong>HOLIDAYS</strong></center>
+                </h1>
+                <ul>
+                    <details>
+                        <summary>New Year's Day</summary>
+                        <p>The Philippines welcomes the New Year with festive <br> celebrations, fireworks, and gatherings. Families and friends <br> come
+                        together to bid farewell to the old year and welcome the <br> new one with hope and optimism.</p>
+                    </details>
+                    <details>
+                        <summary>Chinese New Year</summary>
+                        <p>Celebrated by the Filipino-Chinese community, <br> Chinese New Year marks the beginning of the lunar new year. <br> Festivities
+                        include dragon and lion dances, traditional rituals, <br> and the sharing of meals to usher in good luck and prosperity.</p>
+                    </details>
+                    <details>
+                        <summary>EDSA People Power Anniversary</summary>
+                        <p>The EDSA People Power Anniversary commemorates the <br> peaceful People Power Revolution in 1986, which led to the <br> ousting of
+                            the Marcos dictatorship. Filipinos celebrate this <br> event with ceremonies, exhibits, and reflections on the <br> importance of
+                            democracy.</p>
+                    </details>
+                    <details>
+                        <summary>Maunday Thursday</summary>
+                        <p>Maundy Thursday is part of the Holy Week observance. <br> Filipinos often participate in religious activities, including <br>
+                        attending church services and processions. It is a time for <br> reflection on the sacrifices of Jesus Christ.</p>
+                    </details>
+                    <details>
+                        <summary>Good Friday</summary>
+                        <p>Good Friday is a solemn day commemorating the <br> crucifixion of Jesus Christ. Many Filipinos engage in acts of <br> penance,
+                        such as the "Senakulo" (Passion Play) and joining <br> processions depicting the Stations of the Cross.</p>
+                    </details>
+                    <details>
+                        <summary>Black Saturday</summary>
+                        <p>Following Good Friday, Black Saturday is a day of quiet <br> reflection and mourning. It precedes the joyous celebration of <br>
+                        Easter Sunday. Some communities hold solemn vigils and <br> religious services.</p>
+                    </details>
+                    <details>
+                        <summary>Labor Day</summary>
+                        <p>Labor Day recognizes the contributions of workers in the <br> Philippines. It is a national holiday marked by workers'
+                        rallies, <br> parades, and various events advocating for labor rights and <br> social justice.</p>
+                    </details>
+                    <details>
+                        <summary>Independence Day</summary>
+                        <p>Independence Day commemorates the Philippine <br> Declaration of Independence from Spanish colonial rule in 1898. <br> Festivities
+                        include flag-raising ceremonies, parades, and cultural <br> programs to honor the country's freedom.</p>
+                    </details>
+                    <details>
+                        <summary>National Heroes Day</summary>
+                        <p>National Heroes Day pays tribute to the nation's heroes, both <br> known and unknown, who sacrificed for Philippine freedom. <br> 
+                        Commemorative events, wreath-laying ceremonies, and <br> historical discussions are held nationwide.</p>
+                    </details>
+                    <details>
+                        <summary>Ninoy Aquino Day</summary>
+                        <p>Ninoy Aquino Day honors the life and legacy of <br> Benigno "Ninoy" Aquino Jr., a key figure in the fight <br> against the Marcos
+                        dictatorship. It is a day of remembrance, <br> with ceremonies highlighting his contributions to democracy.</p>
+                    </details>
+                    <details>
+                        <summary>All Saints' Day</summary>
+                        <p>All Saints' Day is a time for Filipinos to remember and honor <br> their deceased loved ones. Families visit cemeteries,
+                        offer <br> prayers, and decorate graves with flowers and candles.</p>
+                    </details>
+                    <details>
+                        <summary>All Souls' Day</summary>
+                        <p>Following All Saints' Day, All Souls' Day is a continuation of <br> remembering and praying for the souls of the departed. It
+                        is a <br> day of reflection on the concept of life after death.</p>
+                    </details>
+                    <details>
+                        <summary>Bonifacio Day</summary>
+                        <p>Bonifacio Day commemorates the birth of <br> Andres Bonifacio, a key leader in the Philippine Revolution <br> against Spanish
+                        colonization. Events include wreath-laying <br> ceremonies, parades, and discussions on his role in history.</p>
+                    </details>
+                    <details>
+                        <summary>Feast of the Immaculate Conception of Mary</summary>
+                        <p>The Feast of the Immaculate Conception of Mary, <br> observed on December 8th in the Catholic Church, celebrates <br> the belief
+                        that Mary was conceived without original sin, <br> highlighting her purity and holiness. It is a day of special <br> devotion
+                        honoring the mother of Jesus..</p>
+                    </details>
+                    <details>
+                        <summary>Christmas Day</summary>
+                        <p>Christmas in the Philippines is marked by extended <br> celebrations, colorful decorations, and festive gatherings. <br> Filipinos
+                        celebrate with family reunions, traditional meals, <br> and the well-known "Simbang Gabi" (Night Mass).</p>
+                    </details>
+                    <details>
+                        <summary>Rizal Day</summary>
+                        <p>Rizal Day honors the life and works of Dr. Jose Rizal, <br> a national hero and key figure in the Philippine Revolution
+                        <br> against Spanish  rule. Commemorative activities include <br> ceremonies,  educational events, and reflections on his writings.</p>
+                    </details>
+                </ul>
+                <hr>
+            </td>
+        </tr>
+        <tr>
+            <td class="months">
+                <img src="images/March.gif" alt="March" usemap="#March" style="width:350px;height:200px;">
+                <map name="March">
+                    <area shape="rect" coords="34,44,270,350" alt="March" href="March.html">
+                </map>
+            </td>
+            <td class="months">
+                <img src="images/April.gif" alt="April" usemap="#April" style="width:350px;height:200px;">
+                <map name="April">
+                    <area shape="rect" coords="34,44,270,350" alt="April" href="April.html">
+                </map>
+            </td>
+        </tr>
+        <tr>
+            <td class="months">
+                <img src="images/May.gif" alt="May" usemap="#May" style="width:350px;height:200px;">
+                <map name="May">
+                    <area shape="rect" coords="34,44,270,350" alt="May" href="May.html">
+                </map>
+            </td>
+            <td class="months">
+                <img src="images/June.gif" alt="June" usemap="#June" style="width:350px;height:200px;">
+                <map name="June">
+                    <area shape="rect" coords="34,44,270,350" alt="June" href="June.html">
+                </map>
+            </td>
+            <td rowspan="4" colspan="2" class="content">
+                <p class="essay">As we stand at the threshold of 2024, a journey <br> through the upcoming months unveils a rich <br>tapestry of events,
+                accepting the essence of <br> human connection, reflection, and celebration. <br> This odyssey begins with the perennial
+                tradition of <br>New Year's Day in January, where the global community <br> embraces fresh starts and personal
+                resolutions.
+                
+                February <br> follows suit, becoming a melting pot of cultures as the <br> world unites in celebrating the Lunar New Year. The
+                festivities, <br> parades, and cultural expressions mark the transition into <br> the Year of the [current zodiac animal],
+                symbolizing renewal, <br> prosperity, and the interconnectedness of diverse societies. <br>
+                
+                March invites a moment of global reflection with Maundy <br> Thursday and Good Friday, offering a space for <br> contemplation and
+                remembrance across various religious <br>and cultural contexts. As the seasons change, April <br> brings forth the vibrant spirit
+                of spring and a worldwide <br> celebration of Labor Day, acknowledging the invaluable <br> contributions of workers and
+                championing the cause of labor <br> rights.
+                
+                May becomes a month of historical significance as <br> nations around the world celebrate their independence, <br>commemorating
+                pivotal moments that have shaped their <br> identities. Simultaneously, National Heroes Day pays <br>tribute to those who have
+                made indelible contributions to <br> the betterment of society, fostering collective gratitude and <br> pride. 
+                
+                June turns the spotlight on Ninoy Aquino Day, a <br> day of reflection that serves as a poignant reminder of sacrifice <br>and 
+                resilience in the pursuit of democracy and freedom. The <br> mid-year point becomes a juncture for societies to remember <br> the
+                challenges overcome on the path to self-determination. <br>
+                
+                November takes on a solemn tone with All Saints' Day <br>and All Souls' Day, as communities worldwide come together in <br>
+                remembrance, honoring departed loved ones and celebrating <br>the enduring spirit of humanity. The year draws to a close
+                with  <br> a crescendo of celebrations in December, including Bonifacio <br>Day, a commemoration of a national hero, and the
+                joyous <br>festivities of Christmas and Rizal Day, blending reflection <br>and the spirit of giving.
+                
+                Amidst these global observances, <br> February 25 holds special significance for the Philippines as <br>the nation commemorates
+                the EDSA People Power Anniversary<br>—a pivotal moment in history when the collective <br>strength of the people stood as a
+                bastion for democracy.<br>
+                
+                As we embark on this odyssey through the seasons of <br>2024, each month unfurls a unique chapter, weaving together <br>a
+                narrative of change, celebration, and shared humanity.<br> From the resolutions of January to the commemorations <br> in
+                November, the upcoming year promises a kaleidoscope <br>of experiences, inviting us to collectively anticipate the <br> stories,
+                challenges, and triumphs that will shape <br> a year filled with promise and possibility.
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td class="months">
+                <img src="images/July.gif" alt="July" usemap="#July" style="width:350px;height:200px;">
+                <map name="July">
+                    <area shape="rect" coords="34,44,270,350" alt="July" href="July.html">
+                </map>
+            </td>
+            <td class="months">
+                <img src="images/August.gif" alt="August" usemap="#August" style="width:350px;height:200px;">
+                <map name="August">
+                    <area shape="rect" coords="34,44,270,350" alt="August" href="August.html">
+                </map>
+            </td>
+        </tr>
+        <tr>
+            <td class="months">
+                <img src="images/September.gif" alt="September" usemap="#September" style="width:350px;height:200px;">
+                <map name="September">
+                    <area shape="rect" coords="34,44,270,350" alt="September" href="September.html">
+                </map>
+            </td>
+            <td class="months">
+                <img src="images/October.gif" alt="October" usemap="#October" style="width:350px;height:200px;">
+                <map name="October">
+                    <area shape="rect" coords="34,44,270,350" alt="October" href="October.html">
+                </map>
+            </td>
+        </tr>
+        <tr>
+            <td class="months">
+                <img src="images/November.gif" alt="November" usemap="#November" style="width:350px;height:200px;">
+                <map name="November">
+                    <area shape="rect" coords="34,44,270,350" alt="November" href="November.html">
+                </map>
+            </td>
+            <td class="months">
+                <img src="images/December.gif" alt="December" usemap="#December" style="width:350px;height:200px;">
+                <map name="December">
+                    <area shape="rect" coords="34,44,270,350" alt="December" href="December.html">
+                </map>
+            </td>
+        </tr>
+    </table>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/ajax-utils.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

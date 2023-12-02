@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>September</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Bigelow+Rules&family=Bowlby+One+SC&family=Jolly+Lodger&family=Libre+Baskerville:wght@700&family=Merriweather:wght@700&family=Metal+Mania&family=Metamorphous&family=Moul&family=Pirata+One&family=Titan+One&family=UnifrakturMaguntia&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Bigelow+Rules&family=Bowlby+One+SC&family=Jolly+Lodger&family=Libre+Baskerville:wght@700&family=Merriweather:wght@700&family=Metal+Mania&family=Metamorphous&family=Moul&family=Pirata+One&family=Titan+One&family=UnifrakturMaguntia&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <style>
+        * {
+            font-family: 'Metamorphous', sans-serif;
+        }
+
+        header {
+            margin: 0;
+        }
+
+        .holiday {
+            color: red;
+            font-weight: bold;
+        }
+
+        .no-holiday {
+            color: white;
+            font-weight: bold;
+        }
+
+        body {
+            /* background-image: url('images/January.jpg'); */
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        }
+
+        .btn-outline-light {
+            text-align: center;
+            /* margin-top: 5px; */
+            width: 75%;
+        }
+
+        h2 {
+            text-align: center;
+            color: red;
+            margin: auto;
+            font-family: 'Pirata One', sans-serif;
+            text-transform: uppercase;
+        }
+
+        .header-container {
+            max-width: 800px;
+            margin: auto;
+            font-family: sans-serif;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .month {
+            text-align: center;
+            /* background: black; */
+            font-size: 60px;
+            letter-spacing: 10px;
+            font-weight: 100px;
+            color: white;
+            padding: 10px;
+            /* border: 1px solid white; */
+            font-weight: bolder;
+            margin: 0%;
+        }
+
+        th,
+        td {
+            /* width: 100%; */
+            table-layout: fixed;
+            text-align: center;
+            font-size: 17px;
+            border-collapse: collapse;
+            /* border: 1px solid black; */
+        }
+
+        table {
+            margin-top: 10px;
+            padding: 10px;
+            border-spacing: 0px;
+        }
+
+        tr,
+        th,
+        td {
+            padding: 15px;
+        }
+
+        .mon,
+        .tues,
+        .wed,
+        .thurs,
+        .fri {
+            background-color: #C19A6B;
+            color: white;
+        }
+
+        .sat,
+        .sun {
+            background-color: #7B3F00;
+            color: white;
+        }
+
+        .dates {
+            font-size: 4px;
+        }
+
+        td {
+            background: white;
+        }
+
+        td:hover {
+            background: #966919;
+            /* opacity: 40%; */
+            color: white;
+        }
+
+        .calendar-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .calendar {
+            width: 60%;
+        }
+
+        .holidays-container {
+            width: 40%;
+            padding: 10px;
+            /* background-color: #C19A6B; */
+            background-image: url('images/Sep.gif');
+            border-radius: 10px;
+            border: 5px double #dfd391;
+            margin-top: 10px;
+            height: 400px;
+            background-repeat: no-repeat;
+            /* background-attachment: fixed; */
+            background-size: 100% 100%;
+        }
+
+        .date-cell {
+            font-size: 12px;
+        }
+
+        footer {
+            margin-top: 20px;
+        }
+
+        .back-video {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+            position: fixed;
+            min-width: 100%;
+            min-height: 100%;
+        }
+
+        /* Date and Time */
+        .datetime {
+            /* text-align: center; */
+            font-size: 15px;
+            padding: 10px;
+            color: #ffffff;
+            background: #444444;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+            border-radius: 4px;
+            border-right: 10px #7B3F00 solid;
+            border-left: 10px #7B3F00 solid;
+            width: 800px;
+            font-weight: 500;
+            font-family: "Inter", sans-serif;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .time {
+            font-size: 2em;
+            color: #E5AA70;
+        }
+
+        .date {
+            margin: 0;
+            font-size: 1.5em;
+            color: white;
+        }
+
+        /* Large Device */
+        @media (min-width: 1200px) {
+            .btn-outline-light {
+                width: 60%;
+                margin-bottom: 10px;
+            }
+
+            .calendar-container {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+            }
+
+            .calendar {
+                width: 60%;
+                margin-top: 0;
+                /* Remove unnecessary margin */
+                padding: 0;
+                /* Remove unnecessary padding */
+            }
+
+            .holidays-container {
+                width: 38%;
+                /* Adjust width to leave some space between calendar and holidays */
+                margin-top: 10px;
+                height: 365px;
+                /* Use 'auto' instead of 'fit-content' */
+            }
+
+            .dates {
+                font-size: 14px;
+                /* Adjust the font size as needed */
+            }
+
+            table {
+                padding: 0;
+                /* Remove unnecessary padding */
+            }
+
+            .no-holiday {
+                color: white;
+                /* Choose your desired color */
+                font-weight: bold;
+                /* Optional: Add other styling properties as needed */
+            }
+
+            .holiday {
+                color: red;
+                /* Choose your desired color */
+                font-weight: bold;
+                /* Optional: Add other styling properties as needed */
+            }
+
+            .datetime {
+                width: 800px;
+            }
+        }
+
+        /* Medium Device */
+        @media (min-width: 768px) and (max-width: 1199px) {
+            .btn-outline-light {
+                width: 60%;
+                margin-bottom: 10px;
+            }
+
+            .calendar-container {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+            }
+
+            .calendar {
+                width: 60%;
+                margin-top: 0;
+                /* Remove unnecessary margin */
+                padding: 0;
+                /* Remove unnecessary padding */
+            }
+
+            .holidays-container {
+                width: 38%;
+                /* Adjust width to leave some space between calendar and holidays */
+                margin-top: 10px;
+                height: 365px;
+                /* Use 'auto' instead of 'fit-content' */
+            }
+
+            .dates {
+                font-size: 14px;
+                /* Adjust the font size as needed */
+            }
+
+            table {
+                padding: 0;
+                /* Remove unnecessary padding */
+            }
+
+            .datetime {
+                width: 800px;
+            }
+        }
+
+        /* Small Device */
+        @media (max-width: 767px) {
+            .table {
+                width: 170%;
+                margin-top: 20px;
+                padding: 0;
+                /* Remove unnecessary padding */
+                /* letter-spacing: 10px; */
+            }
+
+            .holidays-container {
+                width: 100%;
+                margin-top: 5px;
+                height: auto;
+                /* Use 'auto' instead of 'fit-content' */
+            }
+
+            .date-cell {
+                font-size: 15px;
+                /* Adjust the font size as needed */
+            }
+
+            .btn-outline-light {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+            .datetime {
+                width: 100%;
+            }
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const timeElement = document.querySelector(".time");
+            const dateElement = document.querySelector(".date");
+
+            function updateDateTime() {
+                const now = moment();
+
+                // Format time using moment.js
+                const formattedTime = now.format("hh:mm A");
+                // Format date using moment.js
+                const formattedDate = now.format("dddd, MMMM D YYYY");
+
+                timeElement.textContent = formattedTime;
+                dateElement.textContent = formattedDate;
+            }
+
+            // Initial call to set the time and date immediately
+            updateDateTime();
+
+            // Set up interval for updating time and date every 200 milliseconds
+            setInterval(updateDateTime, 200);
+        });
+        // Function to check if a date has a holiday
+        function checkForHoliday(month, date) {
+            // Define Philippine holidays for January (replace with actual dates)
+            const philippineHolidays = {
+                
+            };
+
+            // Check if the date has a holiday
+            const holidayList = philippineHolidays[date];
+            if (holidayList && holidayList.length > 0) {
+                return { hasHoliday: true, holidayList };
+            } else {
+                return { hasHoliday: false };
+            }
+        }
+        document.addEventListener("DOMContentLoaded", function () {
+            // Select all date cells
+            const dateCells = document.querySelectorAll('.date-cell');
+
+            // Add click event listener to each date cell
+            dateCells.forEach(function (cell) {
+                cell.addEventListener('click', function () {
+                    // Get the clicked date
+                    const clickedDate = cell.innerText.trim();
+
+                    // Call a function to display the holiday information
+                    displayHoliday(clickedDate);
+                });
+            });
+
+            // Function to display holiday information
+            function displayHoliday(date) {
+                // You can customize this part to fetch holiday information based on the clicked date
+                const holidaysContainer = document.getElementById('holidays');
+
+                // Check if the clicked date has a holiday
+                const { hasHoliday, holidayList } = checkForHoliday(1, date); // Assuming month is January (1)
+
+                if (hasHoliday) {
+                    // Display the holiday information
+                    holidaysContainer.innerHTML = `<p class="holiday">Holiday(s) on ${date}: ${holidayList.join(', ')}</p>`;
+                } else {
+                    // Display a message for no holiday
+                    holidaysContainer.innerHTML = `<p class="no-holiday">No holiday on ${date}</p>`;
+                }
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <video autoplay loop muted plays-inline class="back-video">
+        <source src="images/Background.mp4" type="video/mp4">
+    </video>
+    <header>
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div class="carousel-controls">
+                <a class="carousel-control-prev" href="August.html" role="button">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <div class="month">
+                    <strong>SEPTEMBER 2024</strong>
+                </div>
+                <a class="carousel-control-next" href="October.html" role="button">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </header>
+    <div class="datetime">
+        <div class="time"></div>
+        <div class="date"></div>
+    </div>
+
+    <div class="header-container">
+        <div class="calendar-container">
+            <div class="calendar">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th class="sun">Sun</th>
+                            <th class="mon">Mon</th>
+                            <th class="tues">Tues</th>
+                            <th class="wed">Wed</th>
+                            <th class="thurs">Thurs</th>
+                            <th class="fri">Fri</th>
+                            <th class="sat">Sat</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="dates">
+                            <td class="date-cell"><b>
+                                    <font size="4">1</font>
+                                </b></td>
+                            <td class="date-cell"><b>
+                                    <font size="4">2</font>
+                                </b></td>
+                            <td class="date-cell"><b>
+                                    <font size="4">3</font>
+                                </b></td>
+                            <td class="date-cell"><b>
+                                    <font size="4">4</font>
+                                </b></td>
+                            <td class="date-cell"><b>
+                                    <font size="4">5</font>
+                                </b></td>
+                            <td class="date-cell"><b>
+                                    <font size="4">6</font>
+                                </b></td>
+                            <td class="date-cell"><b>
+                                    <font size="4">7</font>
+                                </b></td>
+                        </tr>
+                        <tr>
+                            <td class="date-cell"><b>
+                                    <font size="4">8</font>
+                                </b></td>
+                            <td class="date-cell"><b>
+                                    <font size="4">9</font>
+                                </b></td>
+                            <td class="date-cell"><b>
+                                    <font size="4">10</font>
+                                </b></td>
+                            <td class="date-cell"><b>
+                                    <font size="4">11</font>
+                                </b></td>
+                            <td class="date-cell"><b>
+                                    <font size="4">12</font>
+                                </b></td>
+                            <td class="date-cell"><b>
+                                    <font size="4">13</font>
+                                </b></td>
+                            <td class="date-cell"><b>
+                                    <font size="4">14</font>
+                                </b></td>
+                        </tr>
+                        <tr>
+                            <td class="date-cell"><b>
+                                    <font size="4">15</font>
+                                </b></td>
+                            <td class="date-cell"><b>
+                                    <font size="4">16</font>
+                                </b></td>
+                            <td class="date-cell"><b>
+                                    <font size="4">17</font>
+                                </b></td>
+                            <td class="date-cell"><b>
+                                    <font size="4">18</font>
+                                </b></td>
+                            <td class="date-cell"><b>
+                                    <font size="4">19</font>
+                                </b></td>
+                            <td class="date-cell"><b>
+                                    <font size="4">20</font>
+                                </b></td>
+                            <td class="date-cell"><b>
+                                    <font size="4">21</font>
+                                </b></td>
+                        </tr>
+                        <tr>
+                            <td class="date-cell"><b>
+                                    <font size="4">22</font>
+                                </b></td>
+                            <td class="date-cell"><b>
+                                    <font size="4">23</font>
+                                </b></td>
+                            <td class="date-cell"><b>
+                                    <font size="4">24</font>
+                                </b></td>
+                            <td class="date-cell"><b>
+                                    <font size="4">25</font>
+                                </b></td>
+                            <td class="date-cell"><b>
+                                    <font size="4">26</font>
+                                </b></td>
+                            <td class="date-cell"><b>
+                                    <font size="4">27</font>
+                                </b></td>
+                            <td class="date-cell"><b>
+                                    <font size="4">28</font>
+                                </b></td>
+                        </tr>
+                        <tr>
+                            <td class="date-cell"><b>
+                                    <font size="4">29</font>
+                                </b></td>
+                            <td class="date-cell"><b>
+                                    <font size="4">30</font>
+                                </b></td>
+                            <td class="date-cell">
+                                <font size="4">1</font>
+                            </td>
+                            <td class="date-cell">
+                                <font size="4">2</font>
+                            </td>
+                            <td class="date-cell">
+                                <font size="4">3</font>
+                            </td>
+                            <td class="date-cell">
+                                <font size="4">4</font>
+                            </td>
+                            <td class="date-cell">
+                                <font size="4">5</font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="date-cell">
+                                <font size="4">6</font>
+                            </td>
+                            <td class="date-cell">
+                                <font size="4">7</font>
+                            </td>
+                            <td class="date-cell">
+                                <font size="4">8</font>
+                            </td>
+                            <td class="date-cell">
+                                <font size="4">9</font>
+                            </td>
+                            <td class="date-cell">
+                                <font size="4">10</font>
+                            </td>
+                            <td class="date-cell">
+                                <font size="4">11</font>
+                            </td>
+                            <td class="date-cell">
+                                <font size="4">12</font>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="holidays-container">
+                <h2>Holidays</h2>
+                <div id="holidays"></div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <center><a href="2024Calendar.html" type="button" class="btn btn-outline-light btn-lg btn-justified" role="button"
+                aria-pressed="true">Home</a></center>
+    </footer>
+</body>
+    
+</html>
